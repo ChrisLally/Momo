@@ -1,0 +1,57 @@
+{
+  "name": "momo",
+  "displayName": "Momo",
+  "description": "AI-assisted code generation and editing",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.91.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "momo-vscode.start",
+        "title": "Start Momo AI Assistant"
+      },
+      {
+        "command": "momo.indexCodebase",
+        "title": "Momo: Index Codebase"
+      },
+      {
+        "command": "momo.showIndexedFiles",
+        "title": "Momo: Show Indexed Files"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.91.0",
+    "@types/node": "^16.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "eslint": "^8.26.0",
+    "typescript": "^4.8.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrislally/momo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chrislally/momo/issues"
+  },
+  "homepage": "https://github.com/chrislally/momo#readme"
+}
